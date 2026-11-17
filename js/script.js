@@ -138,7 +138,7 @@ function initTourForm() {
             updatePrice();
 
             // 3. Chuyển hướng sang trang quản trị admin
-            window.location.href = "admin.html";
+            //window.location.href = "admin.html";
         });
     }
 }
