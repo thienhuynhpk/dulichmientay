@@ -208,6 +208,11 @@ nav {
     transform: scale(1.15);
 }
 
+/* Nút 3 gạch (Mặc định ẩn trên máy tính) */
+.menu-toggle {
+    display: none;
+}
+
 .dropdown {
     position: absolute;
     top: 100%;
@@ -514,7 +519,7 @@ form button:hover {
 #topBtn {
     position: fixed;
     right: 20px;
-    bottom: 90px; /* Đã nâng lên 90px tránh thanh Taskbar */
+    bottom: 90px;
     width: 50px;
     height: 50px;
     border: none;
@@ -858,20 +863,72 @@ body.login-page .footer {
 }
 
 /* ==========================================
-   16. RESPONSIVE MOBILE
+   16. RESPONSIVE MOBILE (Thu gọn menu thành nút 3 gạch & chống chồng chéo)
 ========================================== */
 @media (max-width: 768px) {
     section {
         padding: 30px 15px;
     }
 
-    .logo h2 {
-        font-size: 22px;
+    /* Tối ưu header di động: thu nhỏ nút Quản trị & Hotline góc trên */
+    header {
+        position: relative;
+        padding-top: 5px;
     }
 
+    .btn-admin {
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        padding: 4px 8px;
+        font-size: 11px;
+        border-radius: 15px;
+        gap: 3px;
+    }
+
+    .btn-hotline {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        padding: 4px 8px;
+        font-size: 11px;
+        border-radius: 15px;
+    }
+
+    .logo {
+        padding: 35px 10px 10px 10px; /* Đẩy tên logo xuống dưới tránh vướng 2 nút góc */
+    }
+
+    .logo h2 {
+        font-size: 18px;
+    }
+
+    /* Hiển thị nút 3 gạch trên điện thoại */
+    .menu-toggle {
+        display: block;
+        background: var(--primary-dark);
+        color: var(--white);
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-toggle i {
+        margin-right: 8px;
+    }
+
+    /* Mặc định ẩn menu, chỉ hiện khi có class .active được JS kích hoạt */
     .menu {
+        display: none;
         flex-direction: column;
         width: 100%;
+    }
+
+    .menu.active {
+        display: flex;
     }
 
     .menu li {
@@ -879,8 +936,9 @@ body.login-page .footer {
     }
 
     .menu li a {
-        padding: 14px 20px;
+        padding: 12px 20px;
         border-bottom: 1px solid rgba(255, 255, 255, .15);
+        font-size: 15px;
     }
 
     .dropdown {
@@ -892,6 +950,7 @@ body.login-page .footer {
         visibility: visible;
         transform: none;
         display: none;
+        background: #005640;
     }
 
     .menu li:hover .dropdown {
