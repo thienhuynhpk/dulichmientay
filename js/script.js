@@ -132,7 +132,7 @@ function initTourForm() {
             bookings.push(newBooking);
             localStorage.setItem("tour_bookings", JSON.stringify(bookings));
 
-            alert(`ĐĂNG KÝ TOUR THÀNH CÔNG!\n\nHọ tên: ${name}\nĐịa điểm: ${location}\nSố khách: ${quantity}\nTổng tiền: ${formatMoney(total)}\n\nChuyển đến trang quản lý đơn hàng...`);
+            alert(`ĐĂNG KÝ TOUR THÀNH CÔNG!\n\nHọ tên: ${name}\nĐịa điểm: ${location}\nSố khách: ${quantity}\nTổng tiền: ${formatMoney(total)}\n\n`);
 
             tourForm.reset();
             updatePrice();
