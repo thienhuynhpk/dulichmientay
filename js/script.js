@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initBackToTop();
 
     // 3. Khởi tạo tính năng Tour & Form đăng ký (Tích hợp chuyển sang Admin)
-    //initTourForm();
+    initTourForm();
 
     // 4. Khởi tạo hiệu ứng Counter thống kê
     initCounters();
