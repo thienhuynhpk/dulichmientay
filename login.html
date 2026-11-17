@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập Quản Trị - Du Lịch Miền Tây</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+
+    <div class="login-box">
+        <div class="logo">
+            <i class="fa-solid fa-user-shield"></i>
+            <h2>ĐĂNG NHẬP QUẢN TRỊ</h2>
+        </div>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Tài khoản</label>
+                <input type="text" id="username" required>
+            </div>
+
+            <div class="input-group">
+                <label>Mật khẩu</label>
+                <input type="password" id="password" required>
+            </div>
+
+            <button type="submit" class="login-btn">
+                Đăng nhập
+            </button>
+
+            <div id="error" class="error">
+                Sai tài khoản hoặc mật khẩu
+            </div>
+        </form>
+
+        <div class="footer">
+            © Du Lịch Miền Tây
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+
+            if(user === "admin" && pass === "123456"){
+                window.location.href = "admin.html";
+            } else {
+                document.getElementById("error").style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+</html>

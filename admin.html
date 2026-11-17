@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Du Lịch Miền Tây</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="admin-page">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="logo">
+            <h2>🌴 ADMIN</h2>
+        </div>
+
+        <ul>
+            <li><a href="#"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="#booking-section"><i class="fa-solid fa-calendar-check"></i> Đơn Đặt Tour</a></li>
+            <li><a href="#post-section"><i class="fa-solid fa-newspaper"></i> Đăng Bài Viết</a></li>
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Về Trang Chủ</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+        <div class="topbar">
+            <div class="admin-info">
+                Xin chào Admin
+            </div>
+
+            <div class="topbar-actions">
+                <a href="index.html" class="btn-home">
+                    <i class="fa-solid fa-house"></i>
+                    Trang chủ
+                </a>
+
+                <a href="login.html" class="logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Đăng xuất
+                </a>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <!-- THỐNG KÊ -->
+            <div class="cards">
+                <div class="card blue">
+                    <i class="fa-solid fa-route"></i>
+                    <h3>25</h3>
+                    <p>Tổng Tour</p>
+                </div>
+
+                <div class="card green">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <h3>158</h3>
+                    <p>Đơn Đặt Tour</p>
+                </div>
+
+                <div class="card orange">
+                    <i class="fa-solid fa-users"></i>
+                    <h3>420</h3>
+                    <p>Khách Hàng</p>
+                </div>
+
+                <div class="card red">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                    <h3>320M</h3>
+                    <p>Doanh Thu</p>
+                </div>
+            </div>
+
+            <!-- BẢNG QUẢN LÝ ĐƠN ĐẶT TOUR -->
+            <div class="table-box" id="booking-section">
+                <div class="table-header">
+                    <h2>Danh Sách Đơn Đặt Tour Từ Khách Hàng</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Họ Tên & Email</th>
+                                <th>Số Điện Thoại</th>
+                                <th>Địa Điểm</th>
+                                <th>Số Khách</th>
+                                <th>Tổng Tiền</th>
+                                <th>Ngày Khởi Hành</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingTableBody">
+                            <!-- Dữ liệu đơn hàng từ trang liên hệ sẽ tự động load vào đây -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FORM ĐĂNG BÀI DANH LAM MỚI -->
+            <div class="table-box" id="post-section" style="margin-top: 30px;">
+                <div class="table-header">
+                    <h2>Đăng Bài Danh Lam Mới</h2>
+                </div>
+
+                <form id="addPostForm" style="max-width: 100%; box-shadow: none; padding: 0;">
+                    <label for="postTitle">Tên danh lam thắng cảnh *</label>
+                    <input type="text" id="postTitle" placeholder="VD: Thiền viện Trúc Lâm Phương Nam" required>
+
+                    <label for="postProvince">Thuộc tỉnh / thành phố *</label>
+                    <select id="postProvince">
+                        <option value="Cần Thơ">Cần Thơ</option>
+                        <option value="Hậu Giang">Hậu Giang</option>
+                        <option value="Sóc Trăng">Sóc Trăng</option>
+                    </select>
+
+                    <label for="postImage">Đường dẫn hình ảnh *</label>
+                    <input type="text" id="postImage" placeholder="VD: images/truclam.jpg" required>
+
+                    <label for="postContent1">Nội dung đoạn 1 *</label>
+                    <textarea id="postContent1" rows="4" placeholder="Nhập mô tả chính về địa điểm..." required></textarea>
+
+                    <label for="postContent2">Nội dung đoạn 2 (Tùy chọn)</label>
+                    <textarea id="postContent2" rows="3" placeholder="Nhập thêm thông tin trải nghiệm..."></textarea>
+
+                    <button type="submit" class="btn-add" style="border: none; cursor: pointer; font-size: 16px;">
+                        <i class="fa-solid fa-paper-plane"></i> Đăng bài lên trang Danh Lam
+                    </button>
+                </form>
+            </div>
+
+            <!-- BẢNG QUẢN LÝ BÀI VIẾT ĐÃ ĐĂNG -->
+            <div class="table-box" style="margin-top: 30px;">
+                <div class="table-header">
+                    <h2>Quản Lý Bài Viết Danh Lam Đã Đăng</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tiêu Đề</th>
+                                <th>Khu Vực</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="postTableBody">
+                            <!-- Dữ liệu bài viết sẽ tự động load vào đây -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Nhúng file JS chung -->
+    <script src="js/script.js"></script>
+</body>
+</html>

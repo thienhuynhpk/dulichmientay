@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ Và Đặt Tour - Du Lịch Miền Tây</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+<a href="login.html" class="btn-admin">
+        <i class="fa-solid fa-user-shield"></i>
+        Quản Trị
+    </a>
+
+        <div class="logo">
+            <h2>🌴 Du Lịch Miền Tây</h2>
+        </div>
+        
+        <a href="tel:0822423236" class="btn-hotline">
+            ☎ Hotline 0822 42 32 36
+        </a>
+
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i> Trang chủ
+                    </a>
+                </li>
+                <li>
+                    <a href="gioithieu.html">
+                        <i class="fa-solid fa-circle-info"></i> Giới thiệu ▼
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="cantho.html"><i class="fa-solid fa-location-dot"></i> Cần Thơ</a></li>
+                        <li><a href="haugiang.html"><i class="fa-solid fa-location-dot"></i> Hậu Giang</a></li>
+                        <li><a href="soctrang.html"><i class="fa-solid fa-location-dot"></i> Sóc Trăng</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="gioithieu.html#yte">
+                        <i class="fa-solid fa-notes-medical"></i> Y tế
+                    </a>
+                </li>
+                <li>
+                    <a href="gioithieu.html#daihoc">
+                        <i class="fa-solid fa-graduation-cap"></i> Giáo dục ▼
+                    </a>
+                    <ul class="dropdown">
+                        <li><a href="gioithieu.html#daihoc"><i class="fa-solid fa-school"></i> Đại học</a></li>
+                        <li><a href="gioithieu.html#caodang"><i class="fa-solid fa-book-open"></i> Cao đẳng</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="gioithieu.html#khihau">
+                        <i class="fa-solid fa-cloud-sun"></i> Khí hậu
+                    </a>
+                </li>
+                <li>
+                    <a href="danhlam.html">
+                        <i class="fa-solid fa-camera-retro"></i> Danh lam
+                    </a>
+                </li>
+                <li>
+                    <a href="lienhe.html">
+                        <i class="fa-solid fa-address-book"></i> Liên hệ
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>LIÊN HỆ VÀ ĐẶT TOUR</h1>
+                <p>
+                    Đăng ký tour tham quan Cần Thơ - Hậu Giang - Sóc Trăng nhanh chóng và thuận tiện.
+                </p>
+            </div>
+        </section>
+
+        <!-- THÔNG TIN LIÊN HỆ -->
+        <section>
+            <div class="article">
+                <h2>Thông tin liên hệ</h2>
+                <p>
+                    Nếu bạn cần tư vấn về chương trình du lịch, vui lòng liên hệ với chúng tôi qua các thông tin dưới đây:
+                </p>
+                <ul>
+                    <li><strong>Đơn vị:</strong> Công ty Du lịch Miền Tây</li>
+                    <li><strong>Địa chỉ:</strong> Quận Ninh Kiều, TP. Cần Thơ</li>
+                    <li><strong>Điện thoại:</strong> 0292 3822 999</li>
+                    <li><strong>Email:</strong> dulichmientay@gmail.com</li>
+                    <li><strong>Website:</strong> www.dulichmientay.vn</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FORM ĐẶT TOUR -->
+        <section>
+            <h2 style="text-align:center; margin-bottom:5px;">Form Đăng Ký Tour</h2>
+            <h5>Các mục có dấu "*" là bắt buộc</h5>
+            
+            <form id="tourForm">
+                <label>Họ và tên *</label>
+                <input type="text" id="name" placeholder="Nhập họ và tên">
+
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Nhập email">
+
+                <label>Số điện thoại *</label>
+                <input type="tel" id="phone" placeholder="Nhập số điện thoại">
+
+                <label>Chọn địa điểm tham quan *</label>
+                <select id="location">
+                    <option value="Cần Thơ">Cần Thơ</option>
+                    <option value="Hậu Giang">Hậu Giang</option>
+                    <option value="Sóc Trăng">Sóc Trăng</option>
+                </select>
+
+                <label>Số lượng khách *</label>
+                <input type="number" id="quantity" value="1" min="1">
+
+                <label>Ngày khởi hành *</label>
+                <input type="date" id="date">
+
+                <p>
+                    <strong>Giá tour:</strong>
+                    <span id="price"></span>
+                </p>
+                <br>
+                <p>
+                    <strong>Tổng tiền:</strong>
+                    <span id="totalPrice"></span>
+                </p>
+                <br>
+
+                <button type="submit">
+                    <b>Đăng ký tour</b>
+                </button>
+            </form>
+        </section>
+
+        <!-- BẢNG GIÁ -->
+        <section>
+            <div class="article">
+                <h2>Bảng giá tour tham khảo</h2>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th>Điểm đến</th>
+                            <th>Giá tour/người</th>
+                        </tr>
+                        <tr>
+                            <td>Cần Thơ</td>
+                            <td>500.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>Hậu Giang</td>
+                            <td>450.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>Sóc Trăng</td>
+                            <td>400.000 VNĐ</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHÍNH SÁCH -->
+        <section>
+            <div class="article">
+                <h2>Chính sách hủy tour</h2>
+                <ul>
+                    <li>Hủy trước 07 ngày: hoàn tiền 100%.</li>
+                    <li>Hủy trước 03 - 06 ngày: hoàn tiền 50%.</li>
+                    <li>Hủy trước dưới 03 ngày: không hoàn tiền.</li>
+                    <li>Các trường hợp bất khả kháng sẽ được xem xét riêng.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- DỊCH VỤ -->
+        <section>
+            <div class="article">
+                <h2>Dịch vụ đi kèm</h2>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <th>Chi phí</th>
+                        </tr>
+                        <tr>
+                            <td>Taxi tham quan trong ngày</td>
+                            <td>500.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>Thuyền tham quan chợ nổi</td>
+                            <td>350.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>Hướng dẫn viên</td>
+                            <td>300.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>Ăn trưa đặc sản miền Tây</td>
+                            <td>150.000 VNĐ/người</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- CỘT 1 -->
+            <div class="footer-col">
+                <h2>🌴 Du Lịch Miền Tây</h2>
+                <div class="footer-image-box">
+                    <img src="images/songhau.jpg" alt="Miền Tây Sông Nước" class="footer-logo">
+                </div>
+                <p>
+                    Chuyên cung cấp các tour du lịch khám phá miền Tây sông nước trọn gói, chất lượng và uy tín hàng đầu.
+                </p>
+                <p class="footer-slogan">
+                    "Trải nghiệm trọn vẹn, lưu giữ niềm tin."
+                </p>
+            </div>
+
+            <!-- CỘT 2 -->
+            <div class="footer-col">
+                <h2>📍 Thông tin liên hệ</h2>
+                <p><strong>Công ty Du lịch Miền Tây</strong></p>
+                <p>📌 Ninh Kiều, TP. Cần Thơ</p>
+                <p>☎ 0822 42 32 36</p>
+                <p>✉ info@dulichmientay.vn</p>
+                <p>🌐 www.dulichmientay.vn</p>
+            </div>
+
+            <!-- CỘT 3 -->
+            <div class="footer-col">
+                <h2>📜 Chính sách</h2>
+                <ul class="footer-links">
+                    <li><a href="#">Chính sách đặt tour</a></li>
+                    <li><a href="#">Chính sách hủy tour</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                </ul>
+
+                <div class="footer-social">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
+                        <img src="images/facebook.png" alt="Facebook" width="40" height="40">
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" title="YouTube">
+                        <img src="images/youtube.png" alt="YouTube" width="40" height="40">
+                    </a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" title="TikTok">
+                        <img src="images/tiktok.png" alt="TikTok" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                © <span id="year"></span> Website Du Lịch Miền Tây | Thiện Huỳnh
+            </p>
+            <p>Đồ án môn Lập trình Web</p>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button id="topBtn" onclick="topFunction()" title="Về đầu trang">
+        ↑
+    </button>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
